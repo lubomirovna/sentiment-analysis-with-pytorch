@@ -3,6 +3,7 @@
 ## Table of contents
 * [General info](#general-info)
 * [Technologies](#technologies)
+* [Project Status](#project-status)
 
 ## General info
 The aim of my project is to learn deep learning with Pytorch to analyse data taken from twitter.
