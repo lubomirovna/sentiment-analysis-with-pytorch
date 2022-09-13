@@ -6,7 +6,9 @@
 * [Project Status](#project-status)
 
 ## General info
-The aim of my project is to learn deep learning with Pytorch to analyse data taken from twitter.
+The aim of my project is to explore deep learning and Pytorch to analyse data taken from twitter.
+My intention is to find out if Twitter users' attitudes towards climate change and global warming
+have changed over time.
 	
 ## Technologies
 Project is created with:
