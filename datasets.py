@@ -30,7 +30,7 @@ def yield_tokens(data_iter):
         yield tokenizer(text)
 
 
-def build_vocab(train_data, path=None):
+def build_vocab(train_data, path):
     """
     Function to build the vocab from training data.
     """
@@ -41,7 +41,7 @@ def build_vocab(train_data, path=None):
     unk_index = vocab['<unk>']
     vocab.set_default_index(unk_index)
 
-    if (path):
-        torch.save(vocab, path)
+    
+    torch.save(vocab, path)
 
     return vocab
