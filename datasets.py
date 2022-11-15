@@ -2,7 +2,6 @@ import pandas as pd
 import torch
 import torchtext
 from sklearn.model_selection import train_test_split
-from tqdm import tqdm_notebook
 
 df = pd.read_csv('inputs/training_tweets.csv')
 
