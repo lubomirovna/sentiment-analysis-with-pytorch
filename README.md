@@ -7,8 +7,7 @@
 
 ## General info
 The aim of my project is to explore deep learning and Pytorch to analyse data taken from twitter.
-My intention is to find out if Twitter users' attitudes towards climate change and global warming
-have changed over time.
+My intention is to find out if Twitter users' attitudes have changed over time.
 	
 ## Technologies
 Project is created with:
@@ -19,7 +18,7 @@ Project is created with:
 * Tweepy 4.10
 
 Input data used for training:
-https://www.kaggle.com/datasets/edqian/twitter-climate-change-sentiment-dataset
+
 
 ## Project Status
 Project is: in progress
