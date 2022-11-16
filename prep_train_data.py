@@ -6,11 +6,6 @@ import numpy as np
 from torch import float16
 from text_preprocessing import preprocess_text
 
-from sklearn.model_selection import train_test_split
-
-INPUT_DIR = ""
-OUTPUT_DIR = ""
-
 
 def create_arg_parser():
     # Creates and returns the ArgumentParser object
@@ -26,19 +21,21 @@ def create_arg_parser():
 arg_parser = create_arg_parser()
 parsed_args = arg_parser.parse_args(sys.argv[1:])
 if os.path.exists(parsed_args.inputDirectory):
+    global INPUT_DIR
     INPUT_DIR = parsed_args.inputDirectory
 if os.path.exists(parsed_args.outputDirectory):
-    OUTPUT_DIR = parsed_args.inputDirectory
+    global OUTPUT_DIR
+    OUTPUT_DIR = parsed_args.outputDirectory
 
 
 # Import datasets
 
 twitter_dataset = pd.read_csv(
-    f'{INPUT_DIR}/140sentiment.csv',
+    f'{INPUT_DIR}140sentiment.csv',
     encoding="Latin-1",
     names=["polarity", "id", "date", "query", "user", "tweet"])
 
-twitter_reddit_dataset = pd.read_csv(f'{INPUT_DIR}/Twitter_Data.csv')
+twitter_reddit_dataset = pd.read_csv(f'{INPUT_DIR}Twitter_Data.csv')
 
 # Remove unnecessary columns
 twitter_dataset = twitter_dataset[["polarity", "tweet"]]
@@ -90,5 +87,5 @@ tweets_df = tweets_df[~(tweets_df["length"] < 5)]
 print(tweets_df.groupby("polarity")["length"].describe())
 
 # Save data to a csv file
-tweets_df.to_csv(f'{OUTPUT_DIR}/training_tweets.csv',
+tweets_df.to_csv(f'{OUTPUT_DIR}training_tweets.csv',
                  columns=['polarity', 'tweet'])

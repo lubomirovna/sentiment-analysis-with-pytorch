@@ -25,7 +25,7 @@ class SaveBestModel:
                 'model_state_dict': model.state_dict(),
                 'optimizer_state_dict': optimizer.state_dict(),
                 'loss': criterion,
-            }, f'{path}/best_model_1d - Copy.pth')
+            }, f'{path}best_model_1d.pth')
 
 
 def save_model(epoch, model, optimizer, criterion, fold, path):
@@ -39,7 +39,7 @@ def save_model(epoch, model, optimizer, criterion, fold, path):
                 'optimizer_state_dict': optimizer.state_dict(),
                 'loss': criterion,
                 'fold': fold,
-                }, f'{path}/model_1d - Copy.pth')
+                }, f'{path}model_1d.pth')
 
 
 def categorical_accuracy(preds, y):
