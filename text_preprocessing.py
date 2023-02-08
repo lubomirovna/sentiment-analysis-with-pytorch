@@ -139,6 +139,7 @@ def preprocess_text(text, processing_function_list=None):
             replaceURL,
             replaceAtUser,
             removeHashtagInFrontOfWord,
+            chat_words_conversion,
             remove_punctuation,
             replaceMultiExclamationMark,
             replaceMultiQuestionMark,
@@ -147,7 +148,6 @@ def preprocess_text(text, processing_function_list=None):
             remove_stopword,
             remove_emoji,
             remove_numbers,
-            chat_words_conversion,
             stem_words,
             lemmatize_words
         ]

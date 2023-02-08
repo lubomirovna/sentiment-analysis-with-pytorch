@@ -9,11 +9,11 @@ class CNN(nn.Module):
             pretrained_embedding=None,
             freeze_embedding=False,
             vocab_size=None,
-            embedding_dim=200,
-            n_filters=[100, 100, 100],
-            filter_sizes=[2, 3, 4],
-            output_dim=3,
-            dropout=0.5):
+            embedding_dim=None,
+            n_filters=None,
+            filter_sizes=None,
+            output_dim=None,
+            dropout=None):
 
         super().__init__()
 
@@ -64,10 +64,10 @@ class CNN(nn.Module):
 
 
 def reset_weights(m):
-    '''
-      Try resetting model weights to avoid
-      weight leakage.
-    '''
+    
+    # Try resetting model weights to avoid
+    # weight leakage.
+    
     for layer in m.children():
         if hasattr(layer, 'reset_parameters'):
             print(f'Reset trainable parameters of layer = {layer}')

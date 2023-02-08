@@ -8,12 +8,12 @@ def create_datasets(path):
     """
     Function to load text data, build the training and test dataset.
     """
-    df = pd.read_csv(path)
+    df = pd.read_json(path, orient="records", lines=True)
 
     X_train, X_test, Y_train, Y_test = train_test_split(df['tweet'].tolist(),
-                                                        df['polarity'].tolist(),
+                                                        df['sentiment'].tolist(),
                                                         test_size=0.3,
-                                                        stratify=df['polarity'].tolist(),
+                                                        stratify=df['sentiment'].tolist(),
                                                         random_state=42)
     train_data = list(zip(X_train, Y_train))
     test_data = list(zip(X_test, Y_test))
@@ -30,7 +30,7 @@ def yield_tokens(data_iter):
     Function to tokenize input text and yield iterator of tokens.
     """
     for text, _ in data_iter:
-        yield tokenizer(text)
+        yield text.split()
 
 
 def build_vocab(train_data, path):
