@@ -1,0 +1,14 @@
+ASAP=As Soon As Possible
+ATM=At The Moment
+BTW=By The Way
+B4=Before
+FAQ=Frequently Asked Questions
+FYI=For Your Information
+IC=I See
+IRL=In Real Life
+LMAO=Laugh My A.. Off
+LOL=Laughing Out Loud
+U=You
+WTF=What The F...
+
+
